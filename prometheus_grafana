@@ -4,15 +4,15 @@ services:
     container_name: prometheus
     image: prom/prometheus:latest
     volumes:
-            -  /Users/gtal/PycharmProjects/Prometheus_stack//prometheus-grafana/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+            -  ./Prometheus_stack/prometheus-grafana/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - 9090:9090
   grafana:
     container_name: grafana
     image: grafana/grafana:latest
     volumes:
-            - /Users/gtal/PycharmProjects/Prometheus_stack/prometheus-grafana/grafana/grafana.ini:/etc/grafana/grafana.ini
-            - /Users/gtal/PycharmProjects/Prometheus_stack/prometheus-grafana/grafana/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
+            - ./Prometheus_stack/prometheus-grafana/grafana/grafana.ini:/etc/grafana/grafana.ini
+            - ./Prometheus_stack/prometheus-grafana/grafana/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
     ports:
       - 3000:3000
     links:
